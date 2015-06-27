@@ -1,18 +1,18 @@
 class UsersController < ApplicationController
   include Api::V1::User
+  include PaginationHelper
 
   before_action :find_user, only: [:show, :edit, :update, :destroy]
   before_action :find_users, only: [:index]
-
 
   def index
     @users = User.all
     respond_to do |format|
       format.json do
-        render json: users_json(@users), status: :ok
+        render json: pagination_json(@users, :users_json, params[:include] || {}), status: :ok
       end
       format.html do
-        @users
+        @users.paginate pagination_help
       end
     end
   end

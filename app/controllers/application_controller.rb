@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def check_session
     unless logged_in?
-      redirect_to :root
+      redirect_to login_path
       flash[:alert] = 'You must be logged in to view that page'
     end
   end

@@ -4,7 +4,7 @@ module Api::V1::Post
   def post_json(post, includes = {})
     attributes = %w(id title description created_at state)
 
-    api_json(user, only: attributes)
+    api_json(post, only: attributes)
   end
 
 
