@@ -69,6 +69,7 @@ gem 'cancan'
 gem 'bootstrap_form'
 gem 'daemons'
 gem 'jquery-ui-rails'
+gem "paperclip", "~> 4.2"
 
 gem 'simplecov', :require => false, :group => :test
 

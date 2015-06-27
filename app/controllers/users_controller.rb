@@ -22,11 +22,11 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.active.find params[:id]
+    @user = User.active.find params[:id] || params[:user_id]
   end
 
   def find_users
-    @users = User.all.active
+    @users = User.active
   end
 
   def create

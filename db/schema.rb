@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627030447) do
+ActiveRecord::Schema.define(version: 20150627160551) do
 
   create_table "api_keys", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,8 +39,12 @@ ActiveRecord::Schema.define(version: 20150627030447) do
     t.string   "title"
     t.text     "description"
     t.string   "state"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "post_image_file_name"
+    t.string   "post_image_content_type"
+    t.integer  "post_image_file_size"
+    t.datetime "post_image_updated_at"
   end
 
   create_table "role_memberships", force: :cascade do |t|

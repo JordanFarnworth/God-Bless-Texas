@@ -2,7 +2,7 @@ module Api::V1::Post
   include Api::V1::Json
 
   def post_json(post, includes = {})
-    attributes = %w(id title description created_at state)
+    attributes = %w(id title description post_image_file_name created_at state)
 
     api_json(post, only: attributes)
   end
