@@ -19,4 +19,5 @@
 //= require jquery.readyselector
 //= require jquery.simplePagination
 //= require bootbox
+//= require handlebars
 //= require_tree .

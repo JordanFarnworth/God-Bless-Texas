@@ -1,0 +1,15 @@
+<div class="container" id="posts">
+  <% @posts.each do |post| %>
+    <div class="row well" id="post-<%= post.id %>">
+      <div class="col-md-6">
+        <h1>  <%= post.title %></h1>
+        <h4>  <%= post.description %></h4>
+        <p>Submitted on:  <%= post.created_at %></p>
+      </div>
+
+      <div class="col-md-6">
+        <%= image_tag post.post_image.url(:main) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150627160551) do
+ActiveRecord::Schema.define(version: 20150627235818) do
 
   create_table "api_keys", force: :cascade do |t|
     t.integer  "user_id"
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(version: 20150627160551) do
     t.string   "post_image_content_type"
     t.integer  "post_image_file_size"
     t.datetime "post_image_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "role_memberships", force: :cascade do |t|
     t.integer  "user_id"

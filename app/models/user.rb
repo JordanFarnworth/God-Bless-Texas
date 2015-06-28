@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posts
   has_secure_password
   has_many :login_sessions
   has_many :api_keys

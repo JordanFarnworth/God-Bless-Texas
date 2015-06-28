@@ -14,7 +14,7 @@ $gray:                   #777 !default;
 $gray-light:             #808080 !default;
 $gray-lighter:           #ddd !default;
 
-$brand-primary:         #D9230F !default;
+$brand-primary:         #404040 !default;
 $brand-success:         #469408 !default;
 $brand-info:            #029ACF !default;
 $brand-warning:         #9B479F !default;
@@ -358,10 +358,8 @@ $container-lg:                 $container-large-desktop !default;
 
 // Basics of a navbar
 $navbar-height:                    40px !default;
-$navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius-base !default;
 $navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
-$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             $gray !default;
