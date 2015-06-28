@@ -11,7 +11,7 @@
           <%= label_tag 'inputPassword', 'Password', class: 'col-sm-2 control-label sr-only' %>
           <%= password_field_tag :password, nil, class: 'form-control', id: 'inputPassword', placeholder: 'Password' %>
           <%= submit_tag 'Sign in', class: 'btn btn-large btn-primary btn-block' %>
-          <%= submit_tag 'Not a member? Register', class: 'btn btn-large btn-primary btn-block' %>
+          <%= link_to 'Not a member? Register', signup_path, class: 'btn btn-large btn-primary btn-block' %>
         <% end %>
       </div>
     </div>

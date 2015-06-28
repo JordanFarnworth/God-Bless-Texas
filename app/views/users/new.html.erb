@@ -5,13 +5,12 @@
         <div class="logo">
         <%= image_tag "logo.png"  %>
         </div>
-          <div class="fields">
-            <%= bootstrap_form_for(@user) do |f| %>
-              <%= f.text_field :email %>
-              <%= f.text_field :username %>
-              <%= f.password_field :password %>
-              <%= f.submit "Submit Post" %>
-            <% end %>
+        <div class="fields">
+          <%= bootstrap_form_for(@user) do |f| %>
+            <%= f.text_field :email %>
+            <%= f.text_field :username %>
+            <%= f.password_field :password %>
+            <%= f.submit "Sign Up!" %>
           <% end %>
         </div>
       </div>

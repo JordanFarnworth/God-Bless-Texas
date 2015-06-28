@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .posts.index {
-  background-image: url('/assets/orange-denim.jpg');
+    // background-image: url('/assets/orange-denim.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
@@ -10,5 +10,6 @@
 
 .well {
   max-height: 450px;
+  height: 450px;
   overflow-y: auto;
 }

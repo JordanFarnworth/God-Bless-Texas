@@ -11,7 +11,7 @@ class PostsController < ApplicationController
         render json: pagination_json(@posts, :posts_json, params[:include] || {}), status: :ok
       end
       format.html do
-        @posts = @posts.paginate pagination_help
+      @posts = @posts.paginate pagination_help
       end
     end
   end

@@ -3,4 +3,12 @@ class DashboardController < ApplicationController
   def signup
 
   end
+
+  def index
+    respond_to do |format|
+      format.html do
+        redirect_to posts_path
+      end  
+    end
+  end
 end

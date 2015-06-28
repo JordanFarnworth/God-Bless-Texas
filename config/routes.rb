@@ -6,15 +6,19 @@ Rails.application.routes.draw do
     resources :users
     resources :posts
 
-    get 'signup' => 'dashboard#signup'
+    get 'signup' => 'users#new'
+    post 'signup' => 'user#signup'
     get 'login' => 'login#index'
     post 'login' => 'login#verify'
     delete 'login' => 'login#logout'
   end
 
+  scope :admin, defaults: { format: :html }, constraints: { format: :html } do
+
+  end
+
   scope :api, defaults: { format: :json }, constraints: { format: :json } do
     scope :v1 do
-      get 'undelete' => 'companies#deleted'
       resources :users, except: [:new, :edit]
       resources :posts, except: [:new, :edit]
     end
