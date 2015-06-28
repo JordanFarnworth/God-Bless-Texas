@@ -1,0 +1,25 @@
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 veil col-md-offset-3">
+        <div class="logo">
+        <%= image_tag "hipsterlogo.png"  %>
+        </div>
+        <div class="fields">
+            <%= form_tag login_path, method: :post, class: 'form-signin', role: 'form' do %>
+            <%= label_tag 'inputEmail', 'Email', class: 'col-sm-2 control-label sr-only' %>
+            <%= text_field_tag :email, nil, class: 'form-control', id: 'input-email', placeholder: 'Email' %>
+            <%= label_tag 'inputPassword', 'Password', class: 'col-sm-2 control-label sr-only' %>
+            <%= password_field_tag :password, nil, class: 'form-control', id: 'inputPassword', placeholder: 'Password' %>
+            <%= label_tag 'inputPassword', 'Password', class: 'col-sm-2 control-label sr-only' %>
+            <%= password_field_tag :password, nil, class: 'form-control', id: 'inputPassword', placeholder: 'Confirm Password' %>
+            <%= submit_tag 'Submit', class: 'btn btn-large btn-primary btn-block' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" language="JavaScript">
+document.getElementById('input-email').focus();
+</script>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users
     resources :posts
 
+    get 'signup' => 'dashboard#signup'
     get 'login' => 'login#index'
     post 'login' => 'login#verify'
     delete 'login' => 'login#logout'
