@@ -39,6 +39,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update user_params
+      redirect_to @user
+      flash.clear
+      flash[:success] = "#{@user.username} has been updated"
+    else
+      render 'edit'
+    end
+  end
+
   def signup
     @user = User.new user_params
     if @user.save
@@ -49,7 +62,7 @@ class UsersController < ApplicationController
         expires: 1.week.from_now
       }
       flash.clear
-      flash[:success] = "#{user.username} has been created"
+      flash[:success] = "#{@user.username} has been created"
       redirect_to @user
     else
       render 'new'
@@ -79,6 +92,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :created_at, :state, :password)
+    params.require(:user).permit(:username, :email, :created_at, :state, :password, :avatar)
   end
 end

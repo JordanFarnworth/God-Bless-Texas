@@ -3,7 +3,11 @@
     <div class="row">
       <div class="col-md-6 veil col-md-offset-3">
         <div class="logo">
-        <%= image_tag "logo.png"  %>
+        <% if @user.has_image? %>
+          <%= image_tag @user.avatar.url(:medium)  %>
+        <% else %>
+          <%= image_tag "logo.png"  %>
+        <% end %>
         </div>
         <div class="fields">
           <%= bootstrap_form_for(@user) do |f| %>
@@ -11,7 +15,7 @@
             <%= f.text_field :username %>
             <%= f.password_field :password %>
             <%= f.file_field :avatar, as: :file %>
-            <%= f.submit "Sign Up!" %>
+            <%= f.submit "Save Changes" %>
           <% end %>
         </div>
       </div>

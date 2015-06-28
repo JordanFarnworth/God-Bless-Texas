@@ -1,6 +1,6 @@
 <div class="container" id="posts">
   <% @posts.each do |post| %>
-    <div class="row well" id="post-<%= post.id %>">
+    <div class="row well index-post-div" id="post-<%= post.id %>">
       <div class="col-md-6">
         <h1>  <%= link_to post.title, post_path(post) %></h1>
         <h4>  <%= post.description %></h4>

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg']
   has_many :posts
   has_secure_password
   has_many :login_sessions
@@ -15,6 +17,10 @@ class User < ActiveRecord::Base
 
   def active?
     state == 'active'
+  end
+
+  def has_image?
+    return false if self.avatar_file_name == nil
   end
 
   def destroy
