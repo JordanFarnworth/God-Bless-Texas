@@ -16,8 +16,8 @@
         <h4>Posts submitted: <%= @user.posts.active.count %></h4>
         <h4>Posts pending approval: <%= @user.posts.pending_approval.count %></h4>
         <% if @current_user.id == @user.id %>
-          <button type="button" class="btn btn-info">Edit</button>
-          <button type="button" class="btn btn-primary">Delete Account</button>
+          <a href="/users/<%=@user.id%>/edit"><button type="button" class="btn btn-info">Edit</button></a>
+          <a href="/users/<%=@user.id%>/delete"><button type="button" class="btn btn-primary">Delete Account</button></a>
         <% end %>
       </div>
     </div>
@@ -100,7 +100,7 @@
       <!-- Comment Replies -->
       <div class="panel panel-default col-md-4 right-panel">
         <div class="panel-heading">
-          <h2 class="panel-title center">Comment Replies</h2>
+          <h2 class="panel-title center">Posts that I have commented on</h2>
         </div>
         <div class="panel-body">
           <% if @user.posts.pending_approval.nil? %>

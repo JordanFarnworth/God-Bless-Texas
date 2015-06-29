@@ -4,19 +4,5 @@
 
 
 $('.posts.index').ready ->
-  $('body').css('background-color', '#FF9900');
+  $('body').css('background-color', '#E89300');
   $('footer').css('background-color', '#404040');
-  $windows = $('.window')
-  $('.window').windows
-  snapping: true
-  snapSpeed: 500
-  snapInterval: 1100
-  onScroll: (scrollPos) ->
-    # scrollPos:Number
-    return
-  onSnapComplete: ($el) ->
-    # after window ($el) snaps into place
-    return
-  onWindowEnter: ($el) ->
-    # when new window ($el) enters viewport
-    return

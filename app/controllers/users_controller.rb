@@ -52,23 +52,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def signup
-    @user = User.new user_params
-    if @user.save
-      key = SecurityHelper.get_session_key
-      @user.login_sessions.create! key: SecurityHelper.sha_hash(key), expires_at: 1.week.from_now
-      cookie_type[:_texas_app_key] = {
-        value: key,
-        expires: 1.week.from_now
-      }
-      flash.clear
-      flash[:success] = "#{@user.username} has been created"
-      redirect_to @user
-    else
-      render 'new'
-    end
-  end
-
   def create
     @user = User.new user_params
     if @user.save

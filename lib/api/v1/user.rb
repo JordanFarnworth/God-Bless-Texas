@@ -4,7 +4,9 @@ module Api::V1::User
   def user_json(user, includes = {})
     attributes = %w(id username email created_at state)
 
-    api_json(user, only: attributes)
+    api_json(user, only: attributes).tap do |hash|
+      hash[:avatar_url] = user.avatar.url(:medium)
+    end
   end
 
 
