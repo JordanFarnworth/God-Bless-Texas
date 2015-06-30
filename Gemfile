@@ -57,10 +57,6 @@ gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
 gem 'vider', github: 'wazery/vider'
 
-group :mysql do
-  gem 'mysql2'
-end
-
 group :production do
   gem 'pg'
 end
