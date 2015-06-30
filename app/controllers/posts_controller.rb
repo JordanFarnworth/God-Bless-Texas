@@ -66,6 +66,7 @@ class PostsController < ApplicationController
     @post ||= Post.new post_params
     respond_to do |format|
       format.html do
+        @post.user_id = @current_user.id
         if @post.save
           flash[:success] = 'Post created!'
           redirect_to @post
