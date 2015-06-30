@@ -24,14 +24,14 @@ class PostsController < ApplicationController
     @post = Post.find params[:id] || params[:post_id]
     @post.state = "active"
     @post.save
-    redirect_to '/approve'
+    redirect_to approve_path
   end
 
   def deny_post
     @post = Post.find params[:id] || params[:post_id]
     @post.state = "deleted"
     @post.save
-    redirect_to 'happrove'
+    redirect_to approve_path
   end
 
   def approve
