@@ -4,5 +4,9 @@
 
 
 $('.posts.index').ready ->
-  $('body').css('background-color', '#E89300');
-  $('footer').css('background-color', '#404040');
+  $('body').css('background-color', '#FF7300');
+
+$('.posts.approve').ready ->
+
+$('.posts.new').ready ->
+  $('body').css('background-color', '#858585');

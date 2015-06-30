@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :login_sessions
   has_many :api_keys
+  has_many :role_memberships
+  has_many :roles, through: :role_memberships
 
   scope :active, -> { where(state: :active) }
   scope :deleted, -> { where(state: :deleted) }
@@ -13,6 +15,19 @@ class User < ActiveRecord::Base
 
   def infer_values
     self.state ||= :active
+  end
+
+  def admin?
+    roles = self.roles
+    unless roles.count == 0
+      roles.each do |role|
+        if role.name == "Admin"
+          return true
+        else
+          return false  
+        end
+      end
+    end
   end
 
   def active?

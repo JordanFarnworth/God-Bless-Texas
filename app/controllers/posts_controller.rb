@@ -20,6 +20,24 @@ class PostsController < ApplicationController
 
   end
 
+  def approve_post
+    @post = Post.find params[:id] || params[:post_id]
+    @post.state = "active"
+    @post.save
+    redirect_to '/approve'
+  end
+
+  def deny_post
+    @post = Post.find params[:id] || params[:post_id]
+    @post.state = "deleted"
+    @post.save
+    redirect_to '/approve'
+  end
+
+  def approve
+    @posts = Post.pending_approval.all
+  end
+
   def update
     respond_to do |format|
       format.html do

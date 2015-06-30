@@ -103,16 +103,14 @@
           <h2 class="panel-title center">Posts that I have commented on</h2>
         </div>
         <div class="panel-body">
-          <% if @user.posts.pending_approval.nil? %>
+          <% if @user.posts.deleted.nil?   %>
             <p>
-              Looks like you have no accepted posts.
-              Submit one <a href="#">here</a>
+              Looks like you have no denied posts.
             </p>
           <% else %>
             <ul class="list-group">
-              <% @user.posts.pending_approval.each do |p| %>
+              <% @user.posts.deleted.each do |p| %>
                 <li class="list-group-item">
-                  <span class="badge">14</span>
                   <%= p.title %>
                 </li>
               <% end %>

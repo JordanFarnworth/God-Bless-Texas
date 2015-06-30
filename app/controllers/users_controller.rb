@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   include Api::V1::User
   include PaginationHelper
 
+
   skip_before_action :check_session, only: [:new, :create]
 
   before_action :find_user, only: [:show, :edit, :update, :destroy]
