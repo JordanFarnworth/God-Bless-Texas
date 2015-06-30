@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find params[:id] || params[:post_id]
     @post.state = "deleted"
     @post.save
-    redirect_to '/approve'
+    redirect_to 'happrove'
   end
 
   def approve

@@ -18,16 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    roles = self.roles
-    unless roles.count == 0
-      roles.each do |role|
-        if role.name == "Admin"
-          return true
-        else
-          return false  
-        end
-      end
-    end
+    roles.any? { |r| r.name == 'Admin' }
   end
 
   def active?
