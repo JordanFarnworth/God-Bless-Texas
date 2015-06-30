@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'timecop'
+  gem 'pg'
 end
 
 gem 'delayed_job_active_record'
@@ -60,7 +61,7 @@ group :mysql do
   gem 'mysql2'
 end
 
-group :postgres do
+group :production do
   gem 'pg'
 end
 

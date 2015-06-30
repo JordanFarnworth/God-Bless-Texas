@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150628210446) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "api_keys", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "purpose"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150628210446) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id"
+  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
 
   create_table "login_sessions", force: :cascade do |t|
     t.integer  "user_id"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150628210446) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "login_sessions", ["user_id"], name: "index_login_sessions_on_user_id"
+  add_index "login_sessions", ["user_id"], name: "index_login_sessions_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150628210446) do
     t.integer  "user_id"
   end
 
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "role_memberships", force: :cascade do |t|
     t.integer  "user_id"
@@ -58,8 +61,8 @@ ActiveRecord::Schema.define(version: 20150628210446) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "role_memberships", ["role_id"], name: "index_role_memberships_on_role_id"
-  add_index "role_memberships", ["user_id"], name: "index_role_memberships_on_user_id"
+  add_index "role_memberships", ["role_id"], name: "index_role_memberships_on_role_id", using: :btree
+  add_index "role_memberships", ["user_id"], name: "index_role_memberships_on_user_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -82,4 +85,5 @@ ActiveRecord::Schema.define(version: 20150628210446) do
     t.datetime "avatar_updated_at"
   end
 
+  add_foreign_key "posts", "users"
 end
