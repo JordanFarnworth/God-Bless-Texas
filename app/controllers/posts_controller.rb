@@ -90,7 +90,7 @@ class PostsController < ApplicationController
 
   def find_post
     @post = Post.find params[:id] || params[:post_id]
-    @favorited_users = @post.try.favorited
+    @favorited_users = @post.favorited
   end
 
   private

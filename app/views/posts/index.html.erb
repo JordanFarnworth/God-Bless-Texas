@@ -5,11 +5,19 @@
         <h1>  <%= link_to post.title, post_path(post) %></h1>
         <h4>  <%= post.description %></h4>
         <p>Submitted on:  <%= post.created_at %></p>
+        <p>Number of comments:  <%= post.comments.count %></p>
+        <p>Total Favorites:  <%= post.favorites.count %></p>
         <em>Submitted by: <%= link_to post.user.username, user_path(post.user) %></em>
       </div>
 
       <div class="col-md-6">
         <%= image_tag post.post_image.url(:main) %>
+        <% if @current_user.admin? %>
+        <div class="user-admin-buttons">
+          <button type="button" class="btn btn-info" name="button">Edit</button>
+          <button type="button" class="btn btn-warning" name="button">Delete</button>
+        </div>
+        <% end %>
       </div>
     </div>
   <% end %>

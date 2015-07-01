@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
     roles.any? { |r| r.name == 'Admin' }
   end
 
+
   def commented_posts
     posts = []
     self.comments.each do |c|
