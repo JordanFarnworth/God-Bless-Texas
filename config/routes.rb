@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   scope '/', defaults: { format: :html }, constraints: { format: :html } do
     resources :users
     resources :posts do |p|
-      put 'approve' => 'posts#approve_post'
-      put 'deny' => 'posts#deny_post'
+      member do
+        put 'approve' => 'posts#approve_post'
+        put 'deny' => 'posts#deny_post'
+      end
     end
 
     get 'signup' => 'users#new'

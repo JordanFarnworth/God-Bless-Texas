@@ -30,12 +30,8 @@ class User < ActiveRecord::Base
 
 
   def commented_posts
-    posts = []
-    self.comments.each do |c|
-      post = Post.find c.post_id
-      posts << post
-    end
-    posts.uniq
+    #posts = Post.active.joins("INNER JOIN comments ON comments.post_id = posts.id INNER JOIN users ON users.id = comments.user_id").where("users.id = ?", self.id).uniq
+    posts = Post.active.joins(comments: :user).where(comments: { user_id: id }).uniq
   end
 
   def active?
@@ -43,7 +39,7 @@ class User < ActiveRecord::Base
   end
 
   def has_image?
-    return false if self.avatar_file_name == nil
+    self.avatar_file_name != nil
   end
 
   def destroy

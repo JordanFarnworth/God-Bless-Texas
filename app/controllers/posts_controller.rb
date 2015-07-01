@@ -2,8 +2,10 @@ class PostsController < ApplicationController
   include PaginationHelper
   include Api::V1::Post
 
+
+
   before_action :find_posts, only: [:index]
-  before_action :find_post, only: [:show, :update, :edit]
+  before_action :find_post, only: [:show, :update, :edit, :approve_post, :deny_post]
 
   def index
     respond_to do |format|
@@ -21,20 +23,19 @@ class PostsController < ApplicationController
   end
 
   def approve_post
-    @post = Post.find params[:id] || params[:post_id]
     @post.state = "active"
     @post.save
     redirect_to approve_path
   end
 
   def deny_post
-    @post = Post.find params[:id] || params[:post_id]
     @post.state = "deleted"
     @post.save
     redirect_to approve_path
   end
 
   def approve
+    authorize! :approve, Post
     @posts = Post.pending_approval.all
   end
 
@@ -84,12 +85,14 @@ class PostsController < ApplicationController
     end
   end
 
+
+
   def find_posts
     @posts = Post.active
   end
 
   def find_post
-    @post = Post.find params[:id] || params[:post_id]
+    @post = Post.find params[:id]
     @favorited_users = @post.favorited
   end
 

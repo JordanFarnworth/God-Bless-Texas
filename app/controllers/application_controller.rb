@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_current_user
   before_action :check_session
+  before_action :approve_post_count
 
   def check_session
     unless logged_in?
@@ -34,6 +35,12 @@ class ApplicationController < ActionController::Base
     if cookie_type[:_texas_app_key]
       @current_user ||= User.active.joins("LEFT JOIN login_sessions AS l on l.user_id = users.id").where("l.key = ? AND l.expires_at > ?", SecurityHelper.sha_hash(cookie_type[:_texas_app_key]), Time.now).first
     end
+  end
+
+  def approve_post_count
+    @posts = Post.pending_approval.all
+    @post_count =@posts.count
+    @post_count
   end
 
   def current_user

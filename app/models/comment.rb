@@ -2,14 +2,12 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
 
+  VALID_STATES = %w[active deleted]
   validates_presence_of :user
   validates_presence_of :post
+  validates_inclusion_of :state, in: VALID_STATES
 
-  # validates_inclusion_of :state, :in VALID_STATES
-  #
-  # VALID_STATES = %w[active deleted]
-  #
-  # after_save :infer_values
+  before_validation :infer_values
 
   def infer_values
     self.state ||= :active

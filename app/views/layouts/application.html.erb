@@ -29,9 +29,18 @@
         <li><a href="#"><i class="fa fa-comments"></i>Give Suggestion</a></li>
         <% if logged_in? %>
           <% if @current_user.admin? %>
-            <li><a href="/approve"><i class="fa fa-comments"></i>Approve/Deny</a></li>
+            <li>
+
+              <a href="/approve">
+                <i class="fa fa-comments">
+                </i>Approve/Deny
+                <% unless @post_count == 0 %>
+                  <span class="badge"><%= @post_count %></span>
+                <% end %>
+              </a>
+            </li>
           <% end %>
-        <% end %>  
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
