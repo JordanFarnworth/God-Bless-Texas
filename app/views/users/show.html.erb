@@ -10,11 +10,13 @@
   <div class="row user-height ">
     <div class=" row well user-sidebar col-md-3">
       <div class="col-md-offset-1">
-        <img src="<%= @user.avatar.url(:medium) %>" alt="..." class="img-rounded">
+        <img src="<%= @user.avatar.url(:thumbnail) %>" alt="..." class="img-rounded">
         <h2><%= @user.username %></h2>
         <h3><%= @user.email %></h3>
         <h4>Posts submitted: <%= @user.posts.active.count %></h4>
         <h4>Posts pending approval: <%= @user.posts.pending_approval.count %></h4>
+        <h5>Favorited Posts: <%= @user.favorites.count %></h5>
+        <h5>Comments on Posts: <%= @user.comments.count %></h5>
         <% if @current_user.id == @user.id %>
           <a href="/users/<%=@user.id%>/edit"><button type="button" class="btn btn-info">Edit</button></a>
           <a href="/users/<%=@user.id%>/delete"><button type="button" class="btn btn-primary">Delete Account</button></a>
@@ -55,7 +57,7 @@
           <h2 class="panel-title center">Approved Posts</h2>
         </div>
         <div class="panel-body">
-          <% if @user.posts.pending_approval.nil? %>
+          <% if @user.posts.active.nil? %>
             <p>
               Looks like you have no accepted posts.
               Submit one <a href="#">here</a>
@@ -79,17 +81,17 @@
           <h2 class="panel-title center">Favorite Posts</h2>
         </div>
         <div class="panel-body">
-          <% if @user.posts.deleted.nil? %>
+          <% if @user.favorites.count == 0 %>
             <p>
               Looks like you have no favorite posts.
               Search for Pictures <a href="#">here.</a>
             </p>
           <% else %>
             <ul class="list-group">
-              <% @user.posts.pending_approval.each do |p| %>
+              <% @user.favorite_posts.each do |f| %>
                 <li class="list-group-item">
                   <span class="badge">14</span>
-                  <%= p.title %>
+                  <%= f.title %>
                 </li>
               <% end %>
             </ul>

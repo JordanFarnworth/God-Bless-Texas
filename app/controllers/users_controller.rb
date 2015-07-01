@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   skip_before_action :check_session, only: [:new, :create]
 
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :find_user_and_favorites, only: [:show, :edit, :update, :destroy]
   before_action :find_users, only: [:index]
 
   def index
@@ -24,8 +24,9 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-  def find_user
+  def find_user_and_favorites
     @user = User.find params[:id]
+    @user_favorites = @user.favorites
   end
 
   def find_users
