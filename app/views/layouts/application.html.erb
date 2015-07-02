@@ -26,7 +26,6 @@
       <ul class="nav navbar-nav">
         <li><a href="/posts"><i class="fa fa-home"></i>Home</a></li>
         <li><a href="/posts/new"><i class="fa fa-picture-o  "></i>Submit a Photo</a></li>
-        <li><a href="#"><i class="fa fa-comments"></i>Give Suggestion</a></li>
         <% if logged_in? %>
           <% if @current_user.admin? %>
             <li>
@@ -51,7 +50,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><%= link_to 'My Profile', user_path(@current_user)%></li>
-                <li><a href="#">Help</i></a></li>
+                <li><a href="/help">Help</i></a></li>
                 <li><%= link_to 'Logout', login_path, method: :delete %></li>
               </ul>
             </li>
