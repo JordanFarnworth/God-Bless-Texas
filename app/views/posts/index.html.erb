@@ -14,8 +14,8 @@
         <%= image_tag post.post_image.url(:main) %>
         <% if @current_user.admin? %>
         <div class="user-admin-buttons">
-          <button type="button" class="btn btn-info" name="button">Edit</button>
-          <button type="button" class="btn btn-warning" name="button">Delete</button>
+          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info" %>
+          <%= link_to 'Delete', post_path(post), method: :delete, class: "btn btn-warning" %>
         </div>
         <% end %>
       </div>

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :login_sessions
   has_many :api_keys
   has_many :role_memberships
+  has_many :suggestions
   has_many :roles, through: :role_memberships
   has_many :favorites, :dependent => :destroy
   has_many :favorite_posts, :through => :favorites, :source => :post

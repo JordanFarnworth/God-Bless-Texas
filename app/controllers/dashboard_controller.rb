@@ -1,14 +1,23 @@
 class DashboardController < ApplicationController
-  skip_before_action :check_session
-  def signup
+
+  before_action :posts_information
+
+  def posts_information
+    
+  end
+
+  def help
 
   end
 
   def index
     respond_to do |format|
       format.html do
-        redirect_to posts_path
-      end  
+
+      end
+      format.json do
+
+      end
     end
   end
 end

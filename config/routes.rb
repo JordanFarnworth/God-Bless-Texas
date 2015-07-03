@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
     end
 
+    get 'help' => 'dashboard#help'
     get 'signup' => 'users#new'
     get 'approve' => 'posts#approve'
     post 'signup' => 'user#signup'

@@ -2,10 +2,8 @@ class PostsController < ApplicationController
   include PaginationHelper
   include Api::V1::Post
 
-
-
   before_action :find_posts, only: [:index]
-  before_action :find_post, only: [:show, :update, :edit, :approve_post, :deny_post]
+  before_action :find_post, only: [:show, :update, :edit, :approve_post, :deny_post, :destroy]
 
   def index
     respond_to do |format|
@@ -17,7 +15,7 @@ class PostsController < ApplicationController
       end
     end
   end
-
+  
   def edit
 
   end
@@ -68,6 +66,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         @post.user_id = @current_user.id
+        @post.add_page_views
         if @post.save
           flash[:success] = 'Post created!'
           redirect_to @post
@@ -96,6 +95,10 @@ class PostsController < ApplicationController
     @favorited_users = @post.favorited
   end
 
+  def destroy
+    @post.destroy
+    redirect_to posts_path
+  end
   private
   def post_params
     params.require(:post).permit(:title, :description, :state, :post_image)

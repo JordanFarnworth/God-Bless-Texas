@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :description
 
+  serialize :stats, Hash
+
   scope :active, -> { where(state: :active) }
   scope :pending_approval, -> { where(state: :pending_approval) }
   scope :deleted, -> { where(state: :deleted) }
@@ -20,6 +22,11 @@ class Post < ActiveRecord::Base
 
   after_initialize do
     self.state ||= 'pending_approval'
+  end
+
+  def add_page_views
+    self.stats[:page_views] = 0
+    save
   end
 
   def destroy
