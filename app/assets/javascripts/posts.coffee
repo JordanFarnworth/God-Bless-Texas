@@ -4,7 +4,7 @@
 
 
 $('.posts.index').ready ->
-  $('body').css('background-color', '#FF7300');
+  $('body').css('background-color', '#858585');
 
 $('.posts.approve').ready ->
 

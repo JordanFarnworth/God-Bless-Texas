@@ -12,7 +12,7 @@
 
       <div class="col-md-6">
         <%= image_tag post.post_image.url(:main) %>
-        <% if logged_in? && current_user.admin? %>
+        <% if logged_in? && @current_user.admin? %>
           <div class="user-admin-buttons">
             <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info" %>
             <%= link_to 'Delete', post_path(post), method: :delete, class: "btn btn-warning" %>
