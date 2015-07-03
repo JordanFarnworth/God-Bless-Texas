@@ -6,12 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :check_session
   before_action :approve_post_count
 
-  def check_session
-    unless logged_in?
-      redirect_to login_path
-      flash[:alert] = 'You must be logged in to view that page'
-    end
-  end
+
 
  def api_request?
    request.format.symbol == :json
