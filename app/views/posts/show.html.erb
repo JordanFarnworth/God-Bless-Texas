@@ -1,4 +1,21 @@
 
-<%= image_tag @post.post_image.url(:main) %>
-<%= @post.title %>
-<%= @post.description %>
+<div class="container">
+ <div class="row">
+   <div class="col-md-6 well main-image">
+     <div class="image-container">
+       <%= image_tag @post.post_image.url(:main) %>
+       <div class="show-post-title">
+         <h2><%= @post.title %></h2>
+       </div>
+       <div class="show-post-description">
+         <h4><%= @post.description %></h4>
+       </div>
+       <div class="show-user-name">
+       <a href="/users/<%= @post.user.id %>">  <h5><b><%= @post.user.username %></b></h5></a>
+       </div>
+       <div class="show-date-posted">
+         <h5><%= @post.created_at %></h5>
+     </div>
+   </div>
+ </div>
+</div>
