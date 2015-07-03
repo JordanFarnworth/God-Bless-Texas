@@ -2,8 +2,6 @@ class PostsController < ApplicationController
   include PaginationHelper
   include Api::V1::Post
 
-
-
   before_action :find_posts, only: [:index]
   before_action :find_post, only: [:show, :update, :edit, :approve_post, :deny_post, :destroy]
 
@@ -17,7 +15,7 @@ class PostsController < ApplicationController
       end
     end
   end
-
+  
   def edit
 
   end
@@ -68,6 +66,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         @post.user_id = @current_user.id
+        @post.add_page_views
         if @post.save
           flash[:success] = 'Post created!'
           redirect_to @post
