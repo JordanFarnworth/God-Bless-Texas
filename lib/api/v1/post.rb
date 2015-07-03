@@ -5,8 +5,8 @@ module Api::V1::Post
     attributes = %w(id title description created_at state)
 
     api_json(post, only: attributes).tap do |hash|
-      hash[:mini_image_url] = post.post_image.url(:thumb) if includes.include? 'dashboard'
-      hash[:main_image_url] = post.post_image.url(:medium) if includes.include? 'dashboard'
+      hash[:mini_image_url] = post.post_image.url(:thumb)
+      hash[:main_image_url] = post.post_image.url(:medium)
       hash[:favorites_count] = post.favorites.count if includes.include? 'dashboard'
       hash[:page_views] = post.stats[:page_views] if includes.include? 'dashboard'
     end
