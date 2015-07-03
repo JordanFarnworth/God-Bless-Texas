@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   skip_before_filter :verify_authenticity_token, if: 'api_request?'
 
   before_action :set_current_user
-  before_action :check_session
   before_action :approve_post_count
 
 
