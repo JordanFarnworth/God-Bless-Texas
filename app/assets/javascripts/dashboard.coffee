@@ -15,7 +15,7 @@ $('.dashboard.index').ready ->
   getPosts()
 
 getPosts = ->
-   $.ajax "/api/v1/posts",
+   $.ajax "/api/v1/posts?include[]=dashboard",
    type: 'get'
    dataType: 'json'
    success: (data) ->
