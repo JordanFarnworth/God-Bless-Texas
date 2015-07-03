@@ -1,14 +1,44 @@
 <script type="text/x-handlebars-template" id="favorite-posts">
-  <div class="col-md-3 fav-post-div">
-    <h3>{{title}}</h3>
-    <img src="{{mini_image_url}}" alt="" />
-  </div>
+  <a href="#" class="list-group-item">
+    <div class="row">
+      <span class="col-md-2">
+        <img src="{{mini_image_url}}" alt=""/>
+      </span>
+      <span class="col-md-4 post-info">
+        <h3 class="list-group-item-heading">{{title}}</h3>
+        <p class="list-group-item-text">{{description}}</p>
+        <em>Total Favorites: {{favorites_count}}</em>
+      </span>
+    </div>
+  </a>
 </script>
 
 <script type="text/x-handlebars-template" id="new-posts">
-  <h1>new</h1>
+  <a href="#" class="list-group-item">
+    <div class="row">
+      <span class="col-md-2">
+        <img src="{{mini_image_url}}" alt="" />
+      </span>
+      <span class="col-md-4 post-info">
+        <h3 class="list-group-item-heading">{{title}}</h3>
+        <p class="list-group-item-text">{{description}}</p>
+        <em>Created On: {{created_at}}</em>
+      </span>
+    </div>
+  </a>
 </script>
 
 <script type="text/x-handlebars-template" id="popular-posts">
-  <h1>popular</h1>
+  <a href="#" class="list-group-item">
+    <div class="row">
+      <span class="col-md-2">
+        <img src="{{mini_image_url}}" alt="" />
+      </span>
+      <span class="col-md-4 post-info">
+        <h3 class="list-group-item-heading">{{title}}</h3>
+        <p class="list-group-item-text">{{description}}</p>
+        <em>Total Page Views: {{page_views}}</em>
+      </span>
+    </div>
+  </a>
 </script>

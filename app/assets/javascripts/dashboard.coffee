@@ -26,16 +26,19 @@ getPosts = ->
        renderFavorites(this)
 
 renderPopular = (data) ->
+  data.created_at = new Date(data.created_at).toLocaleDateString()
   template = Handlebars.compile($('script#favorite-posts').html())
   temp = $(template(data))
   $('#favorites').append(temp)
 
 renderNew = (data) ->
+  data.created_at = new Date(data.created_at).toLocaleDateString()
   template = Handlebars.compile($('script#new-posts').html())
   temp = $(template(data))
   $('#new').append(temp)
 
 renderFavorites = (data) ->
+  data.created_at = new Date(data.created_at).toLocaleDateString()
   template = Handlebars.compile($('script#popular-posts').html())
   temp = $(template(data))
   $('#popular').append(temp)
