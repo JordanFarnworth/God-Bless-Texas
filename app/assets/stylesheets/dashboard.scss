@@ -15,8 +15,28 @@ background-size: 100%;
 background-attachment: fixed;
 }
 
+.title-h1{
+  font-size: 74px;
+  color: white;
+}
+
+.dash-logo {
+  margin-top: 150px;
+  margin-left: -40px;
+}
+
 .container{
   height: 100%;
+}
+
+.approve-title {
+  font-size: 74px;
+  color: white;
+  margin-left: 35;
+}
+
+.approve-logo{
+  margin-top: 50px;
 }
 
 .veil{
@@ -48,21 +68,25 @@ background-attachment: fixed;
 }
 
 .nav-stacked {
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .post-info{
-  margin-left: 15px;
+  margin-left: 35px;
+}
+
+.dash-title {
+  color: white;
 }
 
 #favorites-p {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 #new-p {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 #popular-p {
-  margin-top: 50px;
+  margin-top: 25px;
 }

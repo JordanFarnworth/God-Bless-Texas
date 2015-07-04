@@ -24,6 +24,16 @@
   <% end %>
   </div>
   <% else %>
-  <h1>No posts to approve/deny!</h1>
+
+  <div class="container">
+   <div class="row">
+     <div class="col-md-6 col-md-offset-3 ">
+       <h1 class="col-md-offset-2 approve-title">No Posts</h1>
+       <%= image_tag 'logo5.png', class: 'col-md-offset-2 approve-logo' %>
+     </div>
+   </div>
+  </div>
+
+
   <% end %>
 </div>

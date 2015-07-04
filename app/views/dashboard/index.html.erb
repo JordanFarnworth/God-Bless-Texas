@@ -3,16 +3,18 @@
     <div class="row">
       <div class="col-md-2">
         <ul class="nav-stacked nav-pills nav" style="text-align: center;">
-          <li class="active"><a href="#favorites-p" aria-controls="favorites" role="tab" data-toggle="tab" class="btn btn-default"><i class="fa fa-star"></i></a></li>
-          <li><a href="#popular-p" aria-controls="popular" role="tab" data-toggle="tab" class="btn btn-default"><i class="fa fa-fire"></i></a></li>
-          <li><a href="#new-p" aria-controls="new" role="tab" data-toggle="tab" class="btn btn-default"><i class="fa fa-newspaper-o"></i></a></li>
+          <li class="active"><a href="#favorites-p" aria-controls="favorites" role="tab" data-toggle="tab" class="btn btn-info"><i class="fa fa-star"></i></a></li>
+          <li><a href="#popular-p" aria-controls="popular" role="tab" data-toggle="tab" class="btn btn-info"><i class="fa fa-fire"></i></a></li>
+          <li><a href="#new-p" aria-controls="new" role="tab" data-toggle="tab" class="btn btn-info"><i class="fa fa-newspaper-o"></i></a></li>
         </ul>
       </div>
 
-      <div class="col-md-10 ">
+      <div class="col-md-8">
         <div class="tab-content">
+
           <div role="tabpanel" class="tab-pane active" id="favorites-p">
             <div class="row col-md-8 col-md-offset-2" >
+              <h1 class="col-md-offset-4 dash-title">Favorites</h1>
               <div class="list-group" id="favorites">
 
               </div>
@@ -21,6 +23,7 @@
 
           <div role="tabpanel" class="tab-pane" id="popular-p">
             <div class="row col-md-8 col-md-offset-2" >
+              <h1 class="col-md-offset-4 dash-title">Popular</h1>
               <div class="list-group" id="popular">
 
               </div>
@@ -29,13 +32,21 @@
 
           <div role="tabpanel" class="tab-pane" id="new-p">
             <div class="row col-md-8 col-md-offset-2" >
+              <h1 class="col-md-offset-4 dash-title">New</h1>
               <div class="list-group" id="new">
 
               </div>
             </div>
           </div>
+
       </div>
     </div>
+
+    <div class="row col-md-2">
+      <%= image_tag 'logo5.png', class: "dash-logo" %>
+    </div>
+
+
   </div>
 </div>
 

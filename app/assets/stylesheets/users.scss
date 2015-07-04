@@ -10,11 +10,24 @@
 .user-admin-buttons {
   margin-top: 25px;
 }
+.profile-picture{
+  height: 175px;
+  width: 200px;
+}
+
+.user-height {
+  margin-top:0px;
+}
 
 .user-sidebar {
-  height: 640px;
+  height: 650px;
   position: fixed;
-  top: -200px
+  top: -250px
+}
+
+.panel{
+  max-height: 250px;
+  overflow-y: auto;
 }
 
 .right-panel {
@@ -22,7 +35,7 @@
 }
 
 .user-logo {
-  margin-bottom: 1px;
+  margin-bottom: 20px;
 }
 
 .panel {

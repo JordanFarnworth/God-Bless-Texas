@@ -2,7 +2,7 @@
 
   <div class="row col-md-12">
     <div class="col-md-3 col-md-offset-6 user-logo">
-      <%= image_tag "logo3.png" %>
+      <%= image_tag "logo5.png" %>
     </div>
   </div>
 
@@ -10,7 +10,7 @@
   <div class="row user-height ">
     <div class=" row well user-sidebar col-md-3">
       <div class="col-md-offset-1">
-        <img src="<%= @user.avatar.url(:medium) %>" alt="..." class="img-rounded">
+        <img src="<%= @user.avatar.url(:medium) %>" alt="profile_picture" class="img-rounded profile-picture">
         <h2><%= @user.username %></h2>
         <h3><%= @user.email %></h3>
         <h4>Posts submitted: <%= @user.posts.active.count %></h4>
@@ -26,7 +26,6 @@
 
 
     <div class="row-fluid">
-      <% if @current_user.id == @user.id %>
       <!-- posts that need approval -->
       <div class="panel panel-default col-md-4 col-md-offset-1">
         <div class="panel-heading">
@@ -129,14 +128,6 @@
       </div>
 
     </div>
-
-    <% else %>
-
-    <div class="col-md-offset-4">
-      <h1>unauthorized</h1>
-    </div>
-
-    <% end %>
 
   </div>
 

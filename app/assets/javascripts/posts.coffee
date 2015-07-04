@@ -6,7 +6,11 @@
 $('.posts.index').ready ->
   $('body').css('background-color', '#858585');
 
+$('.posts.show').ready ->
+  $('body').css('background-color', '#858585');
+
 $('.posts.approve').ready ->
+  $('body').css('background-color', '#858585');
 
 $('.posts.new').ready ->
   $('body').css('background-color', '#858585');

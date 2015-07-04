@@ -14,6 +14,9 @@ $('.users.new').ready ->
 $('.dashboard.index').ready ->
   getPosts()
 
+$('.dashboard.index').ready ->
+  $('body').css('background-color', '#858585');
+
 getPosts = ->
    $.ajax "/api/v1/posts?include[]=dashboard",
    type: 'get'
