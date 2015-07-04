@@ -33,3 +33,72 @@
     height:100%;
     position:absolute;
 }
+
+/*HELP PAGE CSS*/
+.main-help-text{
+  margin: 5px auto;
+  text-align: center;
+}
+
+.help-bubbles{
+  height: 200px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.help-bubbles h2{
+  text-align: center;
+}
+
+.faq-bubble{
+  height: 200px;
+  text-align: center;
+}
+
+.faq-bubble h5{
+ margin-top: 5px;
+}
+
+.faq-bubble a{
+  margin-top: 40px;
+}
+
+.search-bubble{
+  height: 200px;
+  color: gray;
+  text-align: center;
+}
+
+.search-form{
+  padding-top: 5px;
+}
+
+.search-bubble a {
+  margin-top: 32px;
+}
+
+.suggestion-bubble{
+  height: 200px;
+  color: gray;
+  text-align: center;
+}
+
+.suggestion-bubble h5{
+  padding-top: 5px;
+}
+
+.suggestion-bubble a {
+  margin-top: 21px;
+}
+
+.btn-primary{
+  background-color: #FC7100;
+  background-image: none;
+  border: 1px solid #FC7100;
+}
+
+.btn-primary:hover{
+  background-color: #FC7200;
+  background-image: none;
+  border: 1px solid #fc7200;
+}

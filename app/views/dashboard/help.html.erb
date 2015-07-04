@@ -1,1 +1,36 @@
-<h1>Help Me</h1>
+<div class="container">
+  <div class="row">
+    <div class="main-help-text">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Need help?</h2>
+        <h5>It's OK. A Texan probably would've shot his computer before he made it here.</h5>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wmwLrL1difo" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="help-bubbles">
+      <div class="col-md-4 well faq-bubble">
+        <h2>FAQ's</h2>
+        <h5>Find answers to our FAQ's</h5>
+        <a href="#" class="btn btn-primary">View FAQ</a>
+      </div>
+      <div class="col-md-4 well search-bubble">
+        <h2>Search</h2>
+        <div class="search-form">
+          <%= form_tag("/search", method: "get") do %>
+            <%= label_tag(:q, "Search for:") %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag("Search") %>
+          <% end %>
+        </div>
+        <a href="#" class="btn btn-primary">Search Help</a>
+      </div>
+      <div class="col-md-4  well suggestion-bubble">
+        <h2>Suggestion</h2>
+        <h5>Tell us if we're doing something stupid. We have a sense of humor.</h5>
+        <a href="#" class="btn btn-primary">Give Suggestion</a>
+      </div>
+    </div>
+  </div>
+</div>
