@@ -3,8 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$ ->
-  $('.badge').css('background-color', '#CC5C00 ');
-
-$('.users.show').ready ->
-  $('body').css('background-color', '#858585');
+# $ ->
+#   $('.badge').css('background-color', '#CC5C00 ');
+#
+# $('.users.show').ready ->
+#   $('body').css('background-color', '#858585');
