@@ -20,5 +20,4 @@
 //= require jquery.simplePagination
 //= require bootbox
 //= require handlebars
-//= require jquery.windows
 //= require_tree .
