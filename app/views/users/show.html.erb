@@ -17,7 +17,7 @@
         <h4>Posts pending approval: <%= @user.posts.pending_approval.count %></h4>
         <h5>Favorited Posts: <%= @user.favorites.count %></h5>
         <h5>Comments on Posts: <%= @user.comments.count %></h5>
-        <% if @current_user.id == @user.id %>
+        <% if @current_user == @user %>
           <a href="/users/<%=@user.id%>/edit"><button type="button" class="btn btn-info">Edit</button></a>
           <a href="/users/<%=@user.id%>/delete"><button type="button" class="btn btn-primary">Delete Account</button></a>
         <% end %>

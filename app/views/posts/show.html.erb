@@ -1,12 +1,27 @@
 
 <div class="container">
+
  <div class="row">
-   <div class="col-md-6 well main-image">
+
+   <div class="col-md-6 well post-comments">
+      <h2 class="comment-title">Comments</h2>
+      <div class="list-group" id="posts-list">
+
+      </div>
+      <% if logged_in?%>
+      <textarea class="form-control" id="comment-to-submit" rows="3"></textarea>
+      <button class="btn btn-info pull-right" id="submit-post-comment" type="button" name="button">Submit</button>
+      <% end %>
+    </div>
+
+
+   <div class="col-md-6 col-md-offset-6 well main-image">
+     <div class="show-post-title">
+       <h1><%= @post.title %> <i class="fa fa-star fa-3 pull-right " id="fav-star"></i></h1>
+
+     </div>
      <div class="image-container">
        <%= image_tag @post.post_image.url(:main) %>
-       <div class="show-post-title">
-         <h2><%= @post.title %></h2>
-       </div>
        <div class="show-post-description">
          <h4><%= @post.description %></h4>
        </div>
@@ -15,7 +30,12 @@
        </div>
        <div class="show-date-posted">
          <h5><%= @post.created_at %></h5>
+       </div>
      </div>
    </div>
+
  </div>
+
 </div>
+
+<%= render 'postscripts' %>

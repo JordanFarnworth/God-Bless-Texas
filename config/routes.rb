@@ -24,7 +24,12 @@ Rails.application.routes.draw do
   scope :api, defaults: { format: :json }, constraints: { format: :json } do
     scope :v1 do
       resources :users, except: [:new, :edit]
-      resources :posts, except: [:new, :edit]
+      resources :posts, except: [:new, :edit] do |p|
+        member do
+          get 'comments' => 'comments#post_comments'
+          post 'comments' => 'comments#create'
+        end
+      end
     end
   end
 

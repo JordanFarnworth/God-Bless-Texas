@@ -18,11 +18,19 @@
  margin-left: 30px;
 }
 
+.post-comments {
+  max-height: 625px;
+  height: 575px;
+}
+
+.comment-title {
+  margin-left: 200px;
+}
+
 .main-image {
  max-height: 625px;
  height: 575px;
  overflow-y: auto;
- margin: 15px auto;
  float: none !important;
 }
 
@@ -40,4 +48,9 @@
 
 .show-user-name{
  padding-top: 5px;
+}
+
+#posts-list {
+  max-height: 350px;
+  overflow-y: auto;
 }
