@@ -5,7 +5,7 @@ gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -53,13 +53,12 @@ gem 'bootstrap-sass', '>= 3.2.0'
 gem 'autoprefixer-rails'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
-gem 'vider', github: 'wazery/vider'
+gem 'execjs'
 
 group :production do
   gem 'pg'
 end
 
-gem 'clockwork', git: 'https://github.com/tomykaira/clockwork.git'
 gem 'cancan'
 gem 'bootstrap_form'
 gem 'daemons'
