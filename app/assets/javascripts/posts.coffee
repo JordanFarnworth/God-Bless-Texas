@@ -10,8 +10,14 @@ $('.posts.show').ready ->
   $('body').css('background-color', '#858585');
   getComments()
   $('#submit-post-comment').on 'click', ->
-    submitComment()
-  getFavorite()   
+    submitComment()   
+
+$('.posts.approve').ready ->
+  $('body').css('background-color', '#858585');
+
+$('.posts.new').ready ->
+  $('body').css('background-color', '#858585');
+
 
 getComments = ->
   post = window.location.pathname.match(/\/posts\/(\d+)/)[1]
@@ -42,9 +48,3 @@ addComment = (data) ->
   template = Handlebars.compile($('script#post-comments').html())
   temp = $(template(data))
   $('#posts-list').append(temp)
-
-$('.posts.approve').ready ->
-  $('body').css('background-color', '#858585');
-
-$('.posts.new').ready ->
-  $('body').css('background-color', '#858585');

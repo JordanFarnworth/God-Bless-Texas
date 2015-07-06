@@ -6,15 +6,14 @@
 $('.login.index').ready ->
   $('.navbar').hide()
 
-
 $('.users.new').ready ->
   $('.navbar').hide()
 
-
 $('.dashboard.index').ready ->
+  $('body').css('background-color', '#858585');
   getPosts()
 
-$('.dashboard.index').ready ->
+$('.dashboard.help').ready ->
   $('body').css('background-color', '#858585');
 
 getPosts = ->
