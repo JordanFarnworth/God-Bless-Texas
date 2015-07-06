@@ -42,3 +42,37 @@
   max-height: 250px;
   overflow-y: auto;
 }
+
+.twitter-hover {
+    background-image: url(/assets/twitter-hover-orange.png);
+}
+.facebook-hover {
+    background-image: url(/assets/facebook-hover-orange.png);
+}
+.instagram-hover {
+    background-image: url(/assets/instagram-hover-orange.png);
+}
+
+.social-icons{
+  padding-right: 20px;
+}
+
+.social-sprite {
+    display: block;
+    float: left;
+    height: 48px;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: all 0.3s ease 0s;
+    width: 48px;
+}
+
+.social-icons:first-child{
+  margin-left: none;
+  padding-left: none;
+}
+.social-sprite:hover {
+    background-position: 0 -48px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.8);
+}
+/*#CC5C00*/
