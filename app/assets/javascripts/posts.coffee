@@ -10,7 +10,7 @@ $('.posts.show').ready ->
   $('body').css('background-color', '#858585');
   getComments()
   $('#submit-post-comment').on 'click', ->
-    submitComment()   
+    submitComment();
 
 $('.posts.approve').ready ->
   $('body').css('background-color', '#858585');

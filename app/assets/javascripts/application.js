@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery.readyselector
