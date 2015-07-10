@@ -28,8 +28,10 @@ Rails.application.routes.draw do
         member do
           get 'comments' => 'comments#post_comments'
           post 'comments' => 'comments#create'
+          post 'favorites' => 'favorites#create_favorite'
         end
       end
+
     end
   end
 

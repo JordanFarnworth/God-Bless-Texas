@@ -15,9 +15,9 @@ class PostsController < ApplicationController
       end
     end
   end
-  
-  def edit
 
+  def edit
+    
   end
 
   def approve_post

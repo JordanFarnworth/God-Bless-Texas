@@ -17,9 +17,9 @@
 
    <div class="col-md-6 col-md-offset-6 well main-image">
      <div class="show-post-title">
-       <h1><%= @post.title %> <i class="fa fa-star fa-3 pull-right " id="fav-stara
-         "></i></h1>
-
+       <h1><%= @post.title %>
+         <a href="#" ><i class="fa <%= Favorite.find_by(user: @current_user, post: @post) ? 'fa-star' : 'fa-star-o' %> fa-2" id="fav-star"></i></a>
+       </h1>
      </div>
      <div class="image-container">
        <%= image_tag @post.post_image.url(:main) %>

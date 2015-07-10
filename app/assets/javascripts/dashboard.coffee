@@ -1,7 +1,9 @@
 $('.login.index').ready ->
+  $('body').css('background-color', '#858585');
   $('.navbar').hide()
 
 $('.users.new').ready ->
+  $('body').css('background-color', '#858585');
   $('.navbar').hide()
 
 $('.dashboard.index').ready ->

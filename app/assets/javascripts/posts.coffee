@@ -2,10 +2,16 @@ $('.posts.index').ready ->
   $('body').css('background-color', '#858585');
 
 $('.posts.show').ready ->
+  $('i#fav-star').css('color', '#CC5C00');
   $('body').css('background-color', '#858585');
   getComments()
   $('#submit-post-comment').on 'click', ->
     submitComment();
+  $('#fav-star').on 'click', ->
+    $('i#fav-star').toggleClass('fa-star-o')
+    $('i#fav-star').toggleClass('fa-star')
+    string = id = $('#fav-star').attr('class')
+    addFavorite(string)
 
 $('.posts.approve').ready ->
   $('body').css('background-color', '#858585');
@@ -13,6 +19,32 @@ $('.posts.approve').ready ->
 $('.posts.new').ready ->
   $('body').css('background-color', '#858585');
 
+
+addFavorite = (string) ->
+  post = window.location.pathname.match(/\/posts\/(\d+)/)[1]
+  console.log string
+  if string == 'fa fa-2 fa-star'
+    $.ajax "/api/v1/posts/#{post}/favorites",
+      type: 'post'
+      dataType: 'json'
+      success: () ->
+        console.log('created')
+  else if string == 'fa fa-2 fa-star-o'
+    $.ajax "/api/v1/posts/#{post}/favorites",
+      type: 'post'
+      dataType: 'json'
+      success: () ->
+        console.log('updated')
+  else
+    console.log('no')
+
+
+
+  # $.ajax "/posts/#{post}/favorites",
+  #   type: 'post'
+  #   dataType: 'html'
+  #   success: () ->
+  #     console.log('thank god')
 
 getComments = ->
   post = window.location.pathname.match(/\/posts\/(\d+)/)[1]

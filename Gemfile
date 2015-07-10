@@ -57,6 +57,7 @@ gem 'execjs'
 
 group :production do
   gem 'pg'
+  gem 'paperclip-nginx-upload'
 end
 
 gem 'cancan'
