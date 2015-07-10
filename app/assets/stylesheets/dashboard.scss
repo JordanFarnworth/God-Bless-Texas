@@ -1,18 +1,28 @@
 // Place all the styles related to the Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face{
+  font-family: "firefly";
+  src:url(/assets/fonts/firefly.otf);
+}
+
+.main-login-text{
+  text-align: center;
+}
+
+.main-login-text h1{
+  font-family: "firefly";
+  font-size: 100px;
+  color: #FFFFFF;
+  letter-spacing: .1em;
+}
+
 .users.new {
- background-image: url('/assets/butt_tag.jpg');
- background-repeat: no-repeat;
- background-size: 100%;
- background-attachment: fixed;
+  background-color: #858585;
 }
 
 .login.index{
-background-image: url('/assets/butt_tag.jpg');
-background-repeat: no-repeat;
-background-size: 100%;
-background-attachment: fixed;
+  background-color: #858585;
 }
 
 .title-h1{
@@ -40,11 +50,15 @@ background-attachment: fixed;
 }
 
 .veil{
-  background-color: rgba(225,225,225,0.2);
+  background-color: rgba(0,0,0,0.2);
   margin: 0 auto 0 auto;
   border-radius: 10px;
   display: block;
   align: center;
+}
+
+.veil-container{
+  margin-top: 50px;
 }
 
 .form-signin {
@@ -55,7 +69,7 @@ background-attachment: fixed;
 }
 
 .login-form {
-  margin-top: 75px;
+  margin-top: -20px;
 }
 
 .logo{
@@ -89,4 +103,9 @@ background-attachment: fixed;
 
 #popular-p {
   margin-top: 25px;
+}
+
+.tab-content h2,h3{
+  text-overflow: none;
+  word-wrap: break-word;
 }

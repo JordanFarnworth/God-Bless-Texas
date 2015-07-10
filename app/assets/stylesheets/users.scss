@@ -30,6 +30,24 @@
   overflow-y: auto;
 }
 
+.text-wrap{
+  padding-bottom: 1px;
+}
+
+.text-wrap h2{
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+margin-left: 5px;
+}
+
+.text-wrap h3{
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+margin-left: 5px;
+}
+
 .right-panel {
   margin-left: 10px;
 }
@@ -75,4 +93,5 @@
     background-position: 0 -48px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.8);
 }
+
 /*#CC5C00*/
